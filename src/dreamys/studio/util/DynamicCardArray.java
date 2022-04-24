@@ -39,7 +39,6 @@ public class DynamicCardArray {
         return last;
     }
 
-    //remove
     public void remove(int index) {
         //validation
         if (index < 0 || index >= last) {

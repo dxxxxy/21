@@ -31,10 +31,6 @@ public class Deck {
         }
     }
 
-    public DynamicCardArray getCards() {
-        return cards;
-    }
-
     public Card draw() {
         Card card = cards.get(0);
         cards.remove(0);

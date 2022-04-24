@@ -38,6 +38,7 @@ public class Player {
         return value;
     }
 
+    //handles value displayed with both ace values
     public String getDisplayValue(){
         int valueA1 = 0;
         int valueA11 = 0;
@@ -54,7 +55,11 @@ public class Player {
             }
         }
 
-        if (!hand.containsAce()) return String.valueOf(valueA1);
+        //if it doesn't contain an ace, we simply return the normal result
+        if (!hand.containsAce()) {
+            return String.valueOf(valueA1);
+        }
+
         return valueA1 + "/" + valueA11;
     }
 
@@ -63,13 +68,11 @@ public class Player {
 
         System.out.println("Player " + name + ", please choose an ace value: (1 or 11)");
         while (true) {
-
-//            System.out.println("Your hand: " + hand);
             int aceValue = sc.nextInt();
 
             //validate input
             if (aceValue != 1 && aceValue != 11) {
-                System.out.println("Invalid value, please choose 1 or 11");
+                System.out.println("Invalid input. Please enter 1 or 11.");
                 continue;
             }
 
@@ -81,7 +84,6 @@ public class Player {
             hand.set(index, new Card(hand.get(index).getSuit(), CardValue.A11));
             break;
         }
-
     }
 
     public void finish(StandReason reason) {

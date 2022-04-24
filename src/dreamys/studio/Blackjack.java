@@ -12,6 +12,7 @@ public class Blackjack {
 
         System.out.println("Welcome to 21!");
         System.out.println("This is a game of blackjack.");
+        System.out.println("IMPORTANT: You're playing against the dealer, not against each other.");
         System.out.println("How many players will be playing? Enter a number between 1 and 6.");
 
         int numPlayers = sc.nextInt();
