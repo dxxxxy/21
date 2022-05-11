@@ -66,13 +66,13 @@ public class Player {
     public void chooseAce(int index) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Player " + name + ", please choose an ace value: (1 or 11)");
+        System.out.println("Player " + name + " (" + getDisplayValue() + ") , please choose an ace value (1 or 11): ");
         while (true) {
             int aceValue = sc.nextInt();
 
             //validate input
             if (aceValue != 1 && aceValue != 11) {
-                System.out.println("Invalid input. Please enter 1 or 11.");
+                System.out.println("Invalid input. Please enter 1 or 11: ");
                 continue;
             }
 

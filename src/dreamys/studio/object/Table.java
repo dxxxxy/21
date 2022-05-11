@@ -21,20 +21,19 @@ public class Table {
         Scanner sc = new Scanner(System.in);
 
         deal(); //start (initial deal)
-        print(); //print table
         checkCards(); //check cards (conditionals)
-        print(); //print table again with updated cards
+        print(); //print table
 
         //main player loop
         while (!dealersTurn()) {
             for (Player player : players) {
                 if (!player.isFinished()) {
-                    System.out.println(player.getName() + ", would you like to hit or stand? (h or s)");
+                    System.out.println(player.getName() + ", would you like to hit or stand? (h or s): ");
 
                     while (true) {
                         String input = sc.nextLine();
                         if (!input.equals("h") && !input.equals("s")) {
-                            System.out.println("Invalid input. Please enter h or s.");
+                            System.out.println("Invalid input. Please enter h or s: ");
                             continue;
                         }
 
@@ -49,7 +48,6 @@ public class Table {
                 }
             }
 
-            print();
             checkCards();
             print();
         }
@@ -57,17 +55,17 @@ public class Table {
         //reveal dealer's second card
         dealer.getHand().get(1).setHidden(false);
 
+        //if dealer was already finished with HIDDEN card,
+        //we should print it here because it will skip while loop and not reveal
+        if (dealer.isFinished()) print();
+
         //main dealer loop
         while (!dealer.isFinished()) {
+            sc.nextLine();
             hit(dealer);
-            print();
             checkCards();
             print();
         }
-
-        print();
-        checkCards();
-        print();
 
         handleGameOver();
     }
@@ -166,7 +164,7 @@ public class Table {
         if (dealer.getReason() == StandReason.STAND) {
             System.out.println("Dealer stood at " + dealer.getValue());
             for (Player player : players) {
-                if (player.getValue() > dealer.getValue()) {
+                if (player.getValue() > dealer.getValue() && player.getReason() != StandReason.BUST) {
                     winners += player.getName() + " (" + player.getValue() + ")\n";
                 }
             }
@@ -183,6 +181,21 @@ public class Table {
         }
 
         System.out.println(winners);
+
+        //restart game
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Do you wish to start another game (y/n): ");
+        String another = sc.nextLine();
+        if (another.equals("y")) {
+            //create new player objects to reset
+            Player[] cloned = new Player[players.length];
+            for (int i = 0; i < players.length; i++) {
+                cloned[i] = new Player(players[i].getName());
+            }
+
+            //start the new game
+            new Table(new Deck(), cloned).start();
+        }
     }
 
     public void deal() {
