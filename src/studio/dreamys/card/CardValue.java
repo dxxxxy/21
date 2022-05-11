@@ -1,4 +1,4 @@
-package dreamys.studio.card;
+package studio.dreamys.card;
 
 public enum CardValue {
     A(111),

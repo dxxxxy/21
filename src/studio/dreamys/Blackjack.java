@@ -1,8 +1,8 @@
-package dreamys.studio;
+package studio.dreamys;
 
-import dreamys.studio.object.Deck;
-import dreamys.studio.object.Player;
-import dreamys.studio.object.Table;
+import studio.dreamys.object.Deck;
+import studio.dreamys.object.Player;
+import studio.dreamys.object.Table;
 
 import java.io.File;
 import java.io.IOException;

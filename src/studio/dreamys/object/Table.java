@@ -1,8 +1,8 @@
-package dreamys.studio.object;
+package studio.dreamys.object;
 
-import dreamys.studio.card.Card;
-import dreamys.studio.card.CardValue;
-import dreamys.studio.util.StandReason;
+import studio.dreamys.card.Card;
+import studio.dreamys.card.CardValue;
+import studio.dreamys.util.StandReason;
 
 import java.util.Scanner;
 

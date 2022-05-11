@@ -1,4 +1,4 @@
-package dreamys.studio.util;
+package studio.dreamys.util;
 
 public enum StandReason {
     STAND,

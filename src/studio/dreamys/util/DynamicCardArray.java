@@ -1,7 +1,7 @@
-package dreamys.studio.util;
+package studio.dreamys.util;
 
-import dreamys.studio.card.Card;
-import dreamys.studio.card.CardValue;
+import studio.dreamys.card.Card;
+import studio.dreamys.card.CardValue;
 
 @SuppressWarnings("ManualArrayCopy")
 public class DynamicCardArray {

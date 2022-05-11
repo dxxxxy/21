@@ -1,9 +1,9 @@
-package dreamys.studio.object;
+package studio.dreamys.object;
 
-import dreamys.studio.card.Card;
-import dreamys.studio.card.CardSuit;
-import dreamys.studio.card.CardValue;
-import dreamys.studio.util.DynamicCardArray;
+import studio.dreamys.card.Card;
+import studio.dreamys.card.CardSuit;
+import studio.dreamys.card.CardValue;
+import studio.dreamys.util.DynamicCardArray;
 
 public class Deck {
     private DynamicCardArray cards;
