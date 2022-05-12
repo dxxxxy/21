@@ -39,7 +39,7 @@ public class Player {
     }
 
     //handles value displayed with both ace values
-    public String getDisplayValue(){
+    public String getDisplayValue() {
         int valueA1 = 0;
         int valueA11 = 0;
         for (int i = 0; i < hand.size(); i++) {
@@ -66,7 +66,7 @@ public class Player {
     public void chooseAce(int index) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Player " + name + " (" + getDisplayValue() + ") , please choose an ace value (1 or 11): ");
+        System.out.println("Player " + name + " (" + getDisplayValue() + "), please choose an ace value (1 or 11): ");
         while (true) {
             int aceValue = sc.nextInt();
 
